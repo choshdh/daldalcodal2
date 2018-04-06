@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias alias="UserJoinDto" type="com.dal.dto.UserJoinDto"/>
+		<typeAlias alias="UserLoginDto" type="com.dal.dto.UserLoginDto"/>
+		<typeAlias alias="WriteDto" type="com.dal.dto.WriteDto"/>
+		
+		<typeAlias alias="UserLoginVo" type="com.dal.vo.UserLoginVo"/>
+	</typeAliases>
+	
+	<mappers>
+		<mapper resource="mybatis/mappers/user.xml" />
+	</mappers>
+</configuration>
