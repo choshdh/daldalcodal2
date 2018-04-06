@@ -17,7 +17,6 @@ public class UserService {
 	public void joinUser(UserJoinDto userjoindto) {
 		
 		userdao.insertUserInfo(userjoindto);
-		
 	}
 
 	public UserLoginVo login(UserLoginDto userlogindto) {

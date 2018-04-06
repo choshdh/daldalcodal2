@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -49,12 +50,24 @@ public class UserController {
 		return "user/joinForm";
 	}
 	
-	@RequestMapping(value="/join",method = RequestMethod.GET)
-	public String joinsuccess(@ModelAttribute UserJoinDto userjoindto) {
+	@ResponseBody
+	@RequestMapping(value="/join",method = RequestMethod.POST)
+	public String joinsuccess(@ModelAttribute UserJoinDto userjoindto,
+								BindingResult bindingResult ) {
 		System.out.println("/user/joinsuccess");
 		System.out.println(userjoindto.toString());
-		userservice.joinUser(userjoindto);
-		return "user/joinSuccess";
+		
+		System.out.println(bindingResult.getErrorCount());
+		if(bindingResult.getErrorCount() != 0) {
+			System.out.println(bindingResult.toString());
+			return "0";
+		}else {
+			System.out.println(bindingResult.toString());
+			userservice.joinUser(userjoindto);
+			
+			return "1";
+		}
+		
 	}
 	
 	@RequestMapping(value="/logout")

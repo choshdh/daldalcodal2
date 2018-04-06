@@ -9,9 +9,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="${pageContext.request.contextPath}/user/join" method="get">
+	<form action="${pageContext.request.contextPath}/user/join" method="post">
 		Id:<input type="text" name="id" id="id"><br>
-		NickName:<input type="text" name="nickName" id="nickname"><br>
+		NickName:<input type="text" name="nickname" id="nickname"><br>
 		Password:<input type="password" name="pw" id="pw"><br>
 		age:<input type="text" name="age" id="age"><br>
 		e-mail:<input type="text" name="email" id="email"><br>

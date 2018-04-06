@@ -24,7 +24,7 @@
 		<![CDATA[
 			insert into users
 			values(#{id}
-			      ,#{nickName}
+			      ,#{nickname}
 			      ,#{pw}
 			      ,#{age}
 			      ,#{email}
